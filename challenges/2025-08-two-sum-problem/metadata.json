@@ -1,0 +1,27 @@
+{
+  "id": "2025-08-two-sum-problem",
+  "title": "two sum problem",
+  "topic": "algorithms",
+  "difficulty": "easy",
+  "date": "2025-08-06",
+  "description": "[Brief description of the challenge/problem]",
+  "tags": ["[tag1]", "[tag2]", "[tag3]"],
+  "languages": ["python"],
+  "timeComplexity": "[e.g., O(n)]",
+  "spaceComplexity": "[e.g., O(1)]",
+  "estimatedTime": "[e.g., 30 minutes]",
+  "keyInsights": [
+    "[Key insight 1]",
+    "[Key insight 2]",
+    "[Key insight 3]"
+  ],
+  "relatedChallenges": [],
+  "resources": [],
+  "files": {
+    "solution": "solution.py",
+    "diagram": null,
+    "testCases": null
+  },
+  "status": "in-progress",
+  "lastUpdated": "2025-08-06"
+}

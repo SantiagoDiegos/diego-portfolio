@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego - Algorithm & Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Diego's Portfolio</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#challenges">Challenges</a></li>
+                        <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Hi, I'm Diego</h1>
+                <p>Welcome to my learning journey! Here I document my adventures with algorithms, data science, and problem-solving. Each challenge is a step forward in my growth as a developer and data scientist.</p>
+                <div class="social-links">
+                    <a href="https://github.com/diego" target="_blank">
+                        <span>📚</span> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/diego" target="_blank">
+                        <span>💼</span> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>I'm passionate about solving complex problems through code and data. This portfolio represents my commitment to continuous learning and improvement in algorithms, data science, and statistical analysis.</p>
+
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number" id="total-challenges">1</div>
+                            <div class="stat-label">Total Challenges</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="algorithms-count">1</div>
+                            <div class="stat-label">Algorithms</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="statistics-count">0</div>
+                            <div class="stat-label">Statistics</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="data-science-count">0</div>
+                            <div class="stat-label">Data Science</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="challenges" class="section">
+            <div class="container">
+                <h2 class="section-title">My Learning Challenges</h2>
+
+                <div class="filters">
+                    <input type="text" class="search-box" placeholder="Search challenges..." onkeyup="filterChallenges()">
+
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="filterByDifficulty('all')">All Levels</button>
+                        <button class="filter-btn" onclick="filterByDifficulty('easy')">Easy</button>
+                        <button class="filter-btn" onclick="filterByDifficulty('medium')">Medium</button>
+                        <button class="filter-btn" onclick="filterByDifficulty('hard')">Hard</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="filterByTopic('all')">All Topics</button>
+                        <button class="filter-btn" onclick="filterByTopic('algorithms')">Algorithms</button>
+                        <button class="filter-btn" onclick="filterByTopic('statistics')">Statistics</button>
+                        <button class="filter-btn" onclick="filterByTopic('data-science')">Data Science</button>
+                    </div>
+                </div>
+
+                <div class="challenges-grid" id="challenges-grid">
+                    <!-- Example Challenge Card - Replace with your actual challenges -->
+                    <div class="challenge-preview-card" data-difficulty="easy" data-topic="algorithms">
+                        <div class="challenge-header">
+                            <div>
+                                <h3 class="challenge-title">Two Sum Problem</h3>
+                                <div class="challenge-meta">
+                                    <span class="badge difficulty-easy">EASY</span>
+                                    <span class="badge topic-algorithms">ALGORITHMS</span>
+                                </div>
+                            </div>
+                            <div class="challenge-date">Jan 15, 2025</div>
+                        </div>
+
+                        <p class="challenge-description">Given an array of integers and a target sum, find two numbers that add up to the target.</p>
+
+                        <div class="challenge-preview">
+                            <div class="preview-section">
+                                <strong>Strategy:</strong> Hash map for O(1) complement lookups
+                            </div>
+                            <div class="preview-section">
+                                <strong>Key Learning:</strong> Space-time tradeoffs in algorithm design
+                            </div>
+                        </div>
+
+                        <div class="challenge-actions">
+                            <a href="challenges/2025-01-two-sum-problem/" class="read-more-btn">Read Full Solution →</a>
+                        </div>
+                    </div>
+
+                    <!-- Add more challenge cards here as you create them -->
+                    <!-- Use the automation script: ./templates/create-challenge.sh -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Diego. Building knowledge one challenge at a time.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

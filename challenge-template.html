@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+INDIVIDUAL FOLDER STRUCTURE:
+1. Create folder: challenges/YYYY-MM-descriptive-name/
+2. Save this file as: index.html inside that folder
+3. Add supporting files (images, code, data) in the same folder
+
+Examples:
+- challenges/2025-01-binary-search-algorithm/index.html
+- challenges/2025-01-linear-regression-analysis/index.html
+- challenges/2025-02-merge-sort-implementation/index.html
+
+Then update the link in the main index.html to point to the folder:
+<a href="challenges/2025-01-binary-search-algorithm/">Read Full Solution →</a>
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CHALLENGE TITLE] - Diego's Portfolio</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Diego's Portfolio</div>
+                <nav>
+                    <ul>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#challenges">Challenges</a></li>
+                        <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="challenge-detail">
+                <a href="../../index.html#challenges" class="back-link">
+                    ← Back to Challenges
+                </a>
+
+                <div class="challenge-detail-header">
+                    <h1 class="challenge-detail-title">[CHALLENGE TITLE]</h1>
+                    <div class="challenge-detail-meta">
+                        <span class="badge difficulty-[easy/medium/hard]">[EASY/MEDIUM/HARD]</span>
+                        <span class="badge topic-[algorithms/statistics/data-science]">[TOPIC]</span>
+                        <span class="challenge-date">[DATE]</span>
+                    </div>
+                    <p class="challenge-detail-description">
+                        [Brief description of the challenge/problem]
+                    </p>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>🎯 Problem Description</h2>
+                    <p>
+                        [Detailed problem description with examples, constraints, etc.]
+                    </p>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>💡 Small Hint</h2>
+                    <p>
+                        [Your hint for approaching this problem]
+                    </p>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>🚀 My Solution Approach</h2>
+                    <p>
+                        [Explain your approach, reasoning, and algorithm steps]
+                    </p>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>💻 Code Implementation</h2>
+                    <div class="code-block">
+<pre>[YOUR CODE HERE]</pre>
+                    </div>
+
+                    <!-- Images are now in the same folder - much cleaner! -->
+                    <!--
+                    <img src="./algorithm-diagram.png"
+                         alt="Descriptive alt text for accessibility"
+                         style="max-width: 100%; height: auto; margin: 1rem 0;">
+                    -->
+                </div>
+
+                <div class="challenge-section">
+                    <h2>🎯 Key Takeaways</h2>
+                    <p>
+                        [What were the most important insights or lessons?]
+                    </p>
+                    <ul>
+                        <li>[Key takeaway 1]</li>
+                        <li>[Key takeaway 2]</li>
+                        <li>[Key takeaway 3]</li>
+                    </ul>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>🧠 Problem-Solving Strategies Used</h2>
+                    <ul>
+                        <li>[Strategy 1 you used]</li>
+                        <li>[Strategy 2 you used]</li>
+                        <li>[Strategy 3 you used]</li>
+                    </ul>
+                    <p>
+                        [Explain your mental approach to solving this]
+                    </p>
+                </div>
+
+                <div class="challenge-section">
+                    <h2>📚 What I Learned</h2>
+                    <p>
+                        [What new concepts, techniques, or insights did you gain?]
+                    </p>
+
+                    <p><strong>Technical learnings:</strong></p>
+                    <ul>
+                        <li>[Technical lesson 1]</li>
+                        <li>[Technical lesson 2]</li>
+                    </ul>
+
+                    <p><strong>Problem-solving insights:</strong></p>
+                    <ul>
+                        <li>[Insight 1]</li>
+                        <li>[Insight 2]</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Diego. Building knowledge one challenge at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+    </script>
+</body>
+</html>
