@@ -41,12 +41,30 @@
       </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="section">
       <div class="container">
-        <h2>About Me</h2>
-        <!-- Content will be loaded dynamically -->
-        <div id="about-content" class="content-loader">
-          <div class="loading-placeholder">Loading about section...</div>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p>I'm passionate about solving complex problems through code and data. This portfolio represents my commitment to continuous learning and improvement in algorithms, data science, and statistical analysis.</p>
+
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-number" id="total-challenges">1</div>
+              <div class="stat-label">Total Challenges</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="algorithms-count">1</div>
+              <div class="stat-label">Algorithms</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="statistics-count">0</div>
+              <div class="stat-label">Statistics</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="data-science-count">0</div>
+              <div class="stat-label">Data Science</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -130,8 +148,6 @@
   </footer>
 
   <script src="main.js"></script>
-  <!-- Add this new script -->
-<script src="js/content-loader.js"></script>
   <!-- Add this before </body> -->
   <script src="challenges-data.js"></script>
 </body>
