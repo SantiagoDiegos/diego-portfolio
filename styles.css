@@ -994,3 +994,178 @@ footer {
         transform: translateY(0);
     }
 }
+
+
+/* ========================================
+   SKILLS SECTION STYLES - Add these!
+   ======================================== */
+
+/* Skills Section Container */
+.skills-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.skills-category {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.skills-category h4 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* Programming Languages - Skill Bars */
+.skills-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.skill-name {
+    font-weight: 500;
+    min-width: 120px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.skill-bar {
+    flex: 1;
+    height: 10px;
+    background: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px;
+    transition: width 2s ease-in-out;
+    animation: fillBar 2s ease-in-out;
+}
+
+@keyframes fillBar {
+    from { width: 0% !important; }
+}
+
+/* Technology Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-tag {
+    padding: 0.6rem 1.2rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Problem Solving Skills */
+.problem-solving-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.ps-skill {
+    padding: 1.5rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.ps-skill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.ps-skill h5 {
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ps-skill p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design for Skills */
+@media (max-width: 768px) {
+    .skills-category {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .skill-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .skill-name {
+        min-width: unset;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .problem-solving-skills {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ps-skill {
+        padding: 1.25rem;
+    }
+
+    .tech-tags {
+        justify-content: center;
+    }
+
+    .tech-tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-category {
+        padding: 1rem;
+    }
+
+    .skills-category h4 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
