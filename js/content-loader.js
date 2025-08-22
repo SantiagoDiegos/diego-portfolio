@@ -112,21 +112,16 @@ const CONTENT_CONFIG = {
     critical: ['hero', 'navigation']
 };
 
-// Auto-load content when DOM is ready
-document.addEventListener('DOMContentLoaded', async function() {
-    try {
-        // Load all configured sections
-        await contentLoader.loadMultipleContent(CONTENT_CONFIG.sections);
+// Load content when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Load about section
+    if (document.getElementById('about-content')) {
+        contentLoader.loadContent('about-content', 'content/about.html');
+    }
 
-        // Preload additional content
-        if (CONTENT_CONFIG.preload.length > 0) {
-            contentLoader.preloadContent(CONTENT_CONFIG.preload);
-        }
-
-        console.log('✅ All content loaded successfully');
-
-    } catch (error) {
-        console.error('❌ Error loading content:', error);
+    // ADD THIS: Load skills section
+    if (document.getElementById('skills-content')) {
+        contentLoader.loadContent('skills-content', 'content/skills.html');
     }
 });
 

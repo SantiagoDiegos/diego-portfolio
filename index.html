@@ -17,6 +17,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>  <!-- ADD THIS LINE -->
             <li><a href="#challenges">Challenges</a></li>
             <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
           </ul>
@@ -47,6 +48,18 @@
         <!-- Content will be loaded dynamically -->
         <div id="about-content" class="content-loader">
           <div class="loading-placeholder">Loading about section...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADD THIS NEW SKILLS SECTION -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>🛠️ Skills & Technologies</h2>
+        <p class="section-subtitle">My technical toolkit and areas of expertise</p>
+        <!-- Content will be loaded dynamically -->
+        <div id="skills-content" class="content-loader">
+          <div class="loading-placeholder">Loading skills...</div>
         </div>
       </div>
     </section>
@@ -131,7 +144,7 @@
 
   <script src="main.js"></script>
   <!-- Add this new script -->
-<script src="js/content-loader.js"></script>
+  <script src="js/content-loader.js"></script>
   <!-- Add this before </body> -->
   <script src="challenges-data.js"></script>
 </body>
