@@ -1055,7 +1055,30 @@ footer {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 5px;
     transition: width 2s ease-in-out;
-    animation: fillBar 2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add this new style for the animation effect */
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Remove the problematic fillBar animation and replace with this */
+.skills-grid .skill-progress {
+    animation: none;
 }
 
 @keyframes fillBar {
@@ -1063,12 +1086,6 @@ footer {
 }
 
 /* Technology Tags */
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-}
-
 .tech-tag {
     padding: 0.6rem 1.2rem;
     background: var(--primary-color);
@@ -1078,12 +1095,39 @@ footer {
     font-weight: 500;
     transition: all 0.3s ease;
     cursor: default;
+    border: 2px solid var(--primary-color);
 }
 
+/* Better hover effect that works in both themes */
 .tech-tag:hover {
     background: var(--secondary-color);
+    border-color: var(--secondary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Ensure good contrast in light mode */
+[data-theme="light"] .tech-tag {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+[data-theme="light"] .tech-tag:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Ensure good contrast in dark mode */
+[data-theme="dark"] .tech-tag {
+    background: #60a5fa;
+    color: #1e293b;
+    border-color: #60a5fa;
+}
+
+[data-theme="dark"] .tech-tag:hover {
+    background: #93c5fd;
+    border-color: #93c5fd;
 }
 
 /* Problem Solving Skills */
