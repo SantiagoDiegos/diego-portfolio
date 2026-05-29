@@ -4,72 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- THEME INIT: runs before paint to prevent dark-mode flash. Keep this high in <head>. -->
-  <script>
-    (function () {
-      var t = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', t);
-    })();
-  </script>
-
   <title>Diego - Algorithm & Data Science Portfolio</title>
-
-  <!-- SEO + link previews -->
-  <meta name="description" content="Diego's portfolio documenting a learning journey through algorithms, data science, and problem-solving — one coding challenge at a time.">
-  <meta name="author" content="Diego">
-
-  <!-- Open Graph (Slack, LinkedIn, Discord, etc.). Verify the URL matches your live site. -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Diego - Algorithm & Data Science Portfolio">
-  <meta property="og:description" content="Documenting my journey through algorithms, data science, and problem-solving — one coding challenge at a time.">
-  <meta property="og:url" content="[https://YOUR-USERNAME.github.io/YOUR-REPO/]">
-  <!-- Optional: a 1200x630 preview image -->
-  <meta property="og:image" content="[https://YOUR-USERNAME.github.io/YOUR-REPO/assets/preview.png]">
-
-  <!-- Twitter/X card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Diego - Algorithm & Data Science Portfolio">
-  <meta name="twitter:description" content="Documenting my journey through algorithms, data science, and problem-solving.">
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Accessibility: lets keyboard users jump straight to content -->
-  <a href="#main-content" class="skip-link">Skip to content</a>
-
   <header>
     <div class="container">
       <div class="header-content">
         <div class="logo">Diego's Portfolio</div>
-        <nav aria-label="Main navigation">
+        <nav>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="#skills">Skills</a></li>  <!-- ADD THIS LINE -->
             <li><a href="#challenges">Challenges</a></li>
-            <li>
-              <button class="theme-toggle" type="button"
-                      onclick="toggleTheme()"
-                      aria-label="Toggle dark mode">🌓</button>
-            </li>
+            <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main>
     <section id="home" class="hero">
       <div class="container">
         <h1>Hi, I'm Diego</h1>
         <p>Welcome to my learning journey! Here I document my adventures with algorithms, data science, and problem-solving. Each challenge is a step forward in my growth as a developer and data scientist.</p>
         <div class="social-links">
-          <a href="https://github.com/SantiagoDiegos" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/SantiagoDiegos" target="_blank">
             <span>📚</span> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/santiagodiegos/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/santiagodiegos/" target="_blank">
             <span>💼</span> LinkedIn
           </a>
         </div>
@@ -79,24 +45,26 @@
     <section id="about" class="about">
       <div class="container">
         <h2>About Me</h2>
-        <!-- Content loaded dynamically -->
+        <!-- Content will be loaded dynamically -->
         <div id="about-content" class="content-loader">
           <div class="loading-placeholder">Loading about section...</div>
         </div>
       </div>
     </section>
 
+    <!-- ADD THIS NEW SKILLS SECTION -->
     <section id="skills" class="skills">
       <div class="container">
         <h2>🛠️ Skills & Technologies</h2>
         <p class="section-subtitle">My technical toolkit and areas of expertise</p>
-        <!-- Content loaded dynamically -->
+        <!-- Content will be loaded dynamically -->
         <div id="skills-content" class="content-loader">
           <div class="loading-placeholder">Loading skills...</div>
         </div>
       </div>
     </section>
 
+    <!-- Replace your existing challenges section with this -->
     <section id="challenges" class="challenges">
       <div class="container">
         <h2>💻 My Coding Challenges</h2>
@@ -105,12 +73,11 @@
         <!-- Challenge Controls -->
         <div class="challenges-controls">
           <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search challenges..." class="search-input" aria-label="Search challenges">
-            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="text" id="search-input" placeholder="Search challenges..." class="search-input">
+            <span class="search-icon">🔍</span>
           </div>
 
           <div class="filter-container">
-            <label for="difficulty-filter" class="sr-only">Filter by difficulty</label>
             <select id="difficulty-filter" class="filter-select" onchange="challengeManager.filterByDifficulty(this.value)">
               <option value="all">All Difficulties</option>
               <option value="easy">Easy</option>
@@ -118,7 +85,6 @@
               <option value="hard">Hard</option>
             </select>
 
-            <label for="topic-filter" class="sr-only">Filter by topic</label>
             <select id="topic-filter" class="filter-select" onchange="challengeManager.filterByTopic(this.value)">
               <option value="all">All Topics</option>
               <option value="algorithms">Algorithms</option>
@@ -127,7 +93,7 @@
               <option value="machine-learning">ML</option>
             </select>
 
-            <button onclick="challengeManager.clearFilters()" class="clear-filters-btn" type="button">Clear Filters</button>
+            <button onclick="challengeManager.clearFilters()" class="clear-filters-btn">Clear Filters</button>
           </div>
         </div>
 
@@ -136,13 +102,16 @@
           <span id="results-count"></span>
         </div>
 
-        <!-- Challenges Grid (dynamic) -->
+        <!-- Challenges Grid - Now Dynamic! -->
         <div class="challenges-grid" id="challenges-grid">
+          <!-- Challenges will be dynamically loaded here -->
           <div class="loading">Loading challenges...</div>
         </div>
 
-        <!-- Pagination (dynamic) -->
-        <div id="pagination" class="pagination-container"></div>
+        <!-- Pagination -->
+        <div id="pagination" class="pagination-container">
+          <!-- Pagination will be dynamically generated -->
+        </div>
 
         <!-- Quick Stats -->
         <div class="challenge-stats">
@@ -169,18 +138,15 @@
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Diego. Building knowledge one challenge at a time.</p>
+      <p>&copy; 2025 Diego. Building knowledge one challenge at a time.</p>
     </div>
   </footer>
 
   <script src="main.js"></script>
+  <!-- Add this new script -->
   <script src="js/content-loader.js"></script>
+  <!-- Add this before </body> -->
   <script src="challenges-data.js"></script>
-
-  <!-- Auto-update the copyright year so it's never stale -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 
 </html>
