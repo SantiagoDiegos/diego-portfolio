@@ -1,71 +1,46 @@
 <!DOCTYPE html>
+<!--
+INDIVIDUAL FOLDER STRUCTURE:
+1. Create folder: challenges/YYYY-MM-descriptive-name/
+2. Save this file as: index.html inside that folder
+3. Add supporting files (images, code, data) in the same folder
+
+Examples:
+- challenges/2025-01-binary-search-algorithm/index.html
+- challenges/2025-01-linear-regression-analysis/index.html
+- challenges/2025-02-merge-sort-implementation/index.html
+
+Then update the link in the main index.html to point to the folder:
+<a href="challenges/2025-01-binary-search-algorithm/">Read Full Solution →</a>
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- THEME INIT: runs before paint to prevent dark-mode flash. Keep this in <head>. -->
-    <script>
-        (function () {
-            var t = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', t);
-        })();
-    </script>
-
     <title>[CHALLENGE TITLE] - Diego's Portfolio</title>
-
-    <!-- SEO + link previews. Fill in the placeholders for each challenge. -->
-    <meta name="description" content="[One-sentence description of this challenge for search results and link previews]">
-    <meta name="author" content="Diego">
-
-    <!-- Open Graph (Slack, LinkedIn, Discord, etc.) -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="[CHALLENGE TITLE] - Diego's Portfolio">
-    <meta property="og:description" content="[Same one-sentence description as above]">
-    <meta property="og:url" content="[https://YOUR-USERNAME.github.io/challenges/YYYY-MM-challenge-name/]">
-    <!-- Optional: a 1200x630 preview image. Reuse one site-wide image if you don't have a per-challenge one. -->
-    <meta property="og:image" content="[https://YOUR-USERNAME.github.io/assets/preview.png]">
-
-    <!-- Twitter/X card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="[CHALLENGE TITLE] - Diego's Portfolio">
-    <meta name="twitter:description" content="[Same one-sentence description as above]">
-
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- SYNTAX HIGHLIGHTING (Prism.js via CDN — works on GitHub Pages, no build step).
-         Remove these two lines + the autoloader script at the bottom if you don't want it.
-         This is the light theme; readable in both light and dark mode. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
-    <!-- Accessibility: lets keyboard users jump straight to content -->
-    <a href="#main-content" class="skip-link">Skip to content</a>
-
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">Diego's Portfolio</div>
-                <nav aria-label="Main navigation">
+                <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#challenges">Challenges</a></li>
-                        <li>
-                            <button class="theme-toggle" type="button"
-                                    onclick="toggleTheme()"
-                                    aria-label="Toggle dark mode">🌓</button>
-                        </li>
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../index.html#about">About</a></li>
+                        <li><a href="../../index.html#challenges">Challenges</a></li>
+                        <li><button class="theme-toggle" onclick="toggleTheme()">🌓</button></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main id="main-content">
+    <main>
         <div class="container">
             <div class="challenge-detail">
-                <a href="index.html#challenges" class="back-link">
+                <a href="../../index.html#challenges" class="back-link">
                     ← Back to Challenges
                 </a>
 
@@ -105,11 +80,15 @@
                 <div class="challenge-section">
                     <h2>💻 Code Implementation</h2>
                     <div class="code-block">
-<!-- IMPORTANT: escape these characters in your pasted code, or it may break:
-       <  becomes  &lt;     >  becomes  &gt;     &  becomes  &amp;
-     Change "language-python" to language-cpp, language-javascript, etc. to match. -->
-<pre><code class="language-python">[YOUR CODE HERE]</code></pre>
+<pre>[YOUR CODE HERE]</pre>
                     </div>
+
+                    <!-- Images are now in the same folder - much cleaner! -->
+                    <!--
+                    <img src="./algorithm-diagram.png"
+                         alt="Descriptive alt text for accessibility"
+                         style="max-width: 100%; height: auto; margin: 1rem 0;">
+                    -->
                 </div>
 
                 <div class="challenge-section">
@@ -161,26 +140,25 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Diego. Building knowledge one challenge at a time.</p>
+            <p>&copy; 2025 Diego. Building knowledge one challenge at a time.</p>
         </div>
     </footer>
 
     <script>
-        // Theme toggle. (Initial theme is set in <head> before paint to avoid flicker.)
+        // Theme toggle functionality
         function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         }
 
-        // Auto-update the copyright year so it's never stale.
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Initialize theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
     </script>
-
-    <!-- Prism autoloader: pulls in only the language(s) you actually use.
-         Remove this + the Prism CSS link in <head> to drop syntax highlighting. -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>
